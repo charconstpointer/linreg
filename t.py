@@ -1,6 +1,8 @@
 from matplotlib import pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import PolynomialFeatures
+
 import numpy as np
 import math
 X = []
@@ -8,9 +10,7 @@ y = []
 
 for _ in range(100000):
     X.append([_])
-
     y.append([(_*2)])
-
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5)
 reg = LinearRegression().fit(X_train, y_train)
